@@ -6,13 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "bytes32",
-						"name": "merkleRoot_",
-						"type": "bytes32"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -39,6 +33,16 @@
 			{
 				"inputs": [],
 				"name": "BalanceQueryForZeroAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MintToZeroAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MintZeroQuantity",
 				"type": "error"
 			},
 			{
@@ -247,15 +251,28 @@
 			},
 			{
 				"inputs": [],
-				"name": "merkleRoot",
+				"name": "maxSupply",
 				"outputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bytes32"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -408,19 +425,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "newTokenURI",
-						"type": "string"
-					}
-				],
-				"name": "setTokenURI",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -519,6 +523,57 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteInfo",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "vtw",
 				"outputs": [
@@ -534,12 +589,22 @@
 					},
 					{
 						"internalType": "uint256",
+						"name": "passRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
 						"name": "percentage",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
 						"name": "timeLock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vote",
 						"type": "uint256"
 					}
 				],
@@ -713,12 +778,20 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"ERC721L.sol": {
-			"keccak256": "0xb6f03f3e9b6ae83fcdea5b4efac475c77217cc1e12253944df529351d00c5c76",
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0xa2f576be637946f767aa56601c26d717f48a0aff44f82e46f13807eea1009a21",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://63813c41b41fcaddca8ecfb421bd6e368e560b43bf90149b9bc652eba0c80fd0",
-				"dweb:/ipfs/QmcaWGNVzhwYbK4hTGfhfbyZTb8RzA4JmKkfzh4QF4ccuN"
+				"bzz-raw://973868f808e88e21a1a0a01d4839314515ee337ad096286c88e41b74dcc11fc2",
+				"dweb:/ipfs/QmfYuZxRfx2J2xdk4EXN7jKg4bUYEMTaYk9BAw9Bqn4o2Y"
+			]
+		},
+		"ERC721L.sol": {
+			"keccak256": "0xd3487d0c5d44ee12e883b6baa2a4ca03c2a18821b0f5252a9203633b367ab99b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3f7a9029266b3dcac3ace62d51d842e1bd4601b64c4e249ce0d967a2253968e",
+				"dweb:/ipfs/QmehPmsJSGTqA6KrQdfamhkeEwNxhkRddm1qL8kwyUdk8Y"
 			]
 		},
 		"erc721a/contracts/ERC721A.sol": {
