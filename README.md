@@ -1,5 +1,5 @@
 # ERC721L
-// Beerware
+// Burgerware
 
 
 
